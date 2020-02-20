@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.liweifan.modules.importData.dao.InvoicingMapper">
-	<select id="selectL" resultType="com.liweifan.modules.importData.entity.Invoicing">
-		select * from invoicing  order by qcsj,spmc
-		LIMIT #{start},#{end}
-	</select>
-</mapper>
