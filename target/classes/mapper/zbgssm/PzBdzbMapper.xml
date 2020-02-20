@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liweifan.modules.ImportZbms.dao.PzBdzbMapper">
+	<select id="selectBdzbList" resultType="com.liweifan.modules.ImportZbms.entity.PzBdzb">
+		select * from pz_bdzb where jsgs is not null and JSGS NOT IN ('手动填写',"'",'1')
+	</select>
+	<select id="selectZBK" resultType="java.util.Map">
+		select code,zbjc from pz_zbk
+	</select>
+	<select id="selectBdflList" resultType="com.liweifan.modules.ImportZbms.entity.PzBdfl">
+		select * from pz_bdfl
+	</select>
+	
+	<update id="updateZb">
+		update pz_bdzb set field1=#{jsgssm} where id=#{id}
+	</update>
+</mapper>
+
